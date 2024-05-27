@@ -1,0 +1,35 @@
+ShowNotification = function(message)
+    BeginTextCommandThefeedPost('STRING')
+    AddTextComponentSubstringPlayerName(message)
+    EndTextCommandThefeedPostTicker(0, 1)
+end
+
+RegisterCommand('copycoords', function()
+    local coords= GetEntityCoords(PlayerPedId())
+    lib.setClipboard('' .. vector3(coords.x, coords.y, coords.z))
+    ShowNotification('Koordinaten Kopiert!')
+end)
+
+RegisterCommand('copycoords2', function()
+    local coords,heading = GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId())
+    lib.setClipboard('' .. vector3(coords.x, coords.y, coords.z) .. ' heading = ' .. heading)
+    ShowNotification('Koordinaten Kopiert!')
+ end)
+
+RegisterCommand('copycoords3', function()
+    local coords,heading = GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId())
+    lib.setClipboard('{ x = '.. coords.x ..', y = '..coords.y..', z = '.. coords.z ..'}')
+    ShowNotification('Koordinaten Kopiert!')
+end)
+
+RegisterCommand('copycoords4', function()
+    local coords,heading = GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId())
+    lib.setClipboard('{ x = '.. coords.x ..', y = '..coords.y..', z = '.. coords.z ..', rot = '.. heading ..'}')
+    ShowNotification('Koordinaten Kopiert!')
+end)
+
+RegisterCommand('copycoords5', function()
+    local coords= GetEntityCoords(PlayerPedId())
+    lib.setClipboard('{coords = vector3(' .. coords.x .. ', ' .. coords.y .. ', ' .. coords.z.. ')},')
+    ShowNotification('Koordinaten Kopiert!')
+end)
