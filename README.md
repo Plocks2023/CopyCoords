@@ -28,4 +28,3 @@ If you need help or find bugs just join our Discord. If you have any wishes you 
 ### Version
 
 * 1.0.0
-Test
